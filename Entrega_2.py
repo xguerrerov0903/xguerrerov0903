@@ -17,41 +17,41 @@ Contar cuántas calificaciones en la lista son este valor
 '''
 
 
-while True:
-    try:
-        entrada = input("Ingresa tus notas separados por comas (0 al 100): ")
-        
-        valores = []
-        for x in entrada.split(","):
-            if 0 <= float(x.strip()) <= 100:
-                valores.append(float(x.strip()))
-            else:
-                raise ValueError("Nota fuera de rango")
-        break
-                
-    except ValueError:
-        print("Cadena de valores invalida")
 
-
-'''
-# Intentar convertir cada valor a float y verificar el rango
-valido = True
-for x in valores:
-    try:
-        num = float(x)
-        if 0 <= num <= 100:
-            numeros.append(num)
-        else:
-            print(f"El número {num} está fuera del rango permitido (0-100).")
-            valido = False
-    except ValueError:
-        print(f"'{x}' no es un número válido.")
-        valido = False
-
-# Si todos los valores son válidos y en rango, puedes continuar
-if valido:
-    print("Lista de números válidos:", numeros)
-else:
-    print("La entrada contenía valores no válidos o fuera de rango.")
+def cadena_notas ():
+    while True:
+        try:
+            entrada = input("Ingresa tus notas separados por comas (0 al 100): ")
+            
+            valores = []
+            for x in entrada.split(","):
+                if 0 <= float(x.strip()) <= 100:
+                    valores.append(float(x.strip()))
+                else:
+                    raise ValueError("Nota fuera de rango")
+            break
+                    
+        except ValueError:
+            print("Cadena de valores invalida")
+    return valores  
     
-    '''
+
+def aprovado (nota, aprobacion):
+    if (nota>=aprobacion):
+        return True
+    else:
+        return False
+
+def mayor_nota (cadena_nota, mayor_nota):
+    notas_mayor= []
+    for x in cadena_nota:
+        if x>=mayor_nota:
+            notas_mayor.append(x) 
+    return notas_mayor    
+        
+def presente_nota (cadena_nota, actu_nota):
+    return 
+    
+    
+
+
