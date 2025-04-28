@@ -16,19 +16,24 @@ Preguntar al usuario por un valor específico
 Contar cuántas calificaciones en la lista son este valor
 '''
 
+
 while True:
     try:
         entrada = input("Ingresa tus notas separados por comas (0 al 100): ")
-        valores = [x.strip() for x in entrada.split(",")]
         
-
-
-
+        valores = []
+        for x in entrada.split(","):
+            if 0 <= float(x.strip()) <= 100:
+                valores.append(float(x.strip()))
+            else:
+                raise ValueError("Nota fuera de rango")
+        break
+                
     except ValueError:
         print("Cadena de valores invalida")
 
-numeros = []
 
+'''
 # Intentar convertir cada valor a float y verificar el rango
 valido = True
 for x in valores:
@@ -48,3 +53,5 @@ if valido:
     print("Lista de números válidos:", numeros)
 else:
     print("La entrada contenía valores no válidos o fuera de rango.")
+    
+    '''
