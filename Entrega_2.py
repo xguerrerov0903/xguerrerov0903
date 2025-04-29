@@ -18,6 +18,26 @@ Contar cuántas calificaciones en la lista son este valor
 
 
 
+import sys
+
+def num_valido ():
+    while True:
+        try:
+            nota = float(input("Ingresa la nota (0 a 100): "))
+            if nota>=0 and nota<=100:
+                return nota
+                break
+            else:
+                print("Valor invalido")
+        except ValueError:
+            print("Valor invalido")
+
+def aprobado (nota, aprobacion):
+    if (nota>=aprobacion):
+        return True
+    else:
+        return False
+
 def cadena_notas ():
     while True:
         try:
@@ -33,36 +53,78 @@ def cadena_notas ():
                     
         except ValueError:
             print("Cadena de valores invalida")
-    return valores  
-    
-
-def aprovado (nota, aprobacion):
-    if (nota>=aprobacion):
-        return True
-    else:
-        return False
+    return valores      
 
 def mayor_nota (cadena_nota, mayor_nota):
     notas_mayor= []
+    cantidad_notas_mayor= 0
     for x in cadena_nota:
         if x>=mayor_nota:
             notas_mayor.append(x) 
-    return notas_mayor    
+            cantidad_notas_mayor += 1
+    print(f"La cantidad de notas mayores a {mayor_nota} es {cantidad_notas_mayor}")   
+    return notas_mayor
         
 def presente_nota (cadena_nota, actu_nota):
-    return 
+    notas_iguales= []
+    cantidad_notas_igual= 0
+    for x in cadena_nota:
+        if x==actu_nota:
+            notas_iguales.append(x) 
+            cantidad_notas_mayor += 1
+    print(f"La cantidad de notas iguales a {actu_nota} es {cantidad_notas_igual}")   
+    return notas_iguales
     
-def num_valido ():
-    while True:
-        try:
-            nota = float(input("Ingresa una nota (0 a 100): "))
-            if nota>=0 and nota<=100:
-                return nota
-                break
-            else:
-                print("Valor invalido")
-        except ValueError:
-            print("Valor invalido")
+            
+            
+while True:
+    try:
+        print("-"*30)
+        print("Escoje una opcion")
+        print("1. Nota aprovatoria")
+        print("2. Agregar la lista de notas")
+        print("3. Mirar por notas mayores")
+        print("4. Mirar por notas iguales")
+        print("5. Salir")
+        print("-"*30)
+        entrada = int(input("Tipea tu opcion: "))
+        match entrada:
+            case 1:
+                nota_actu = num_valido
+                print("Ahora la nota aprobatoria")
+                nota_aprob = num_valido
+                aprob = aprobado(nota_actu, nota_aprob)
+                if (aprob):
+                    print("Aprobaste")
+                else:
+                    print("No aprobaste")
+                    
+            case 2:
+                lista_notas = cadena_notas
+            case 3:
+                if (lista_notas):
+                    print("Ingresa la nota mayor")
+                    nota_mayor = num_valido
+                    cadena_mayor = mayor_nota(lista_notas, nota_mayor)
+                    print(f"Las notas mayores son: {cadena_mayor}")
+                else:
+                    print("No existe una lista de notas actualmente, usa la opcion 2")
+            case 4:
+                if (lista_notas):
+                    print("Ingresa la nota a buscar sus repeticiones")
+                    nota_igual = num_valido
+                    cadena_igual = presente_nota(lista_notas, nota_igual)
+                else:
+                    print("No existe una lista de notas actualmente, usa la opcion 2")
+            case 5:
+                sys.exit("Hasta la proxima")
+            case _:
+                print("Numero invalido")
+
+    except ValueError:
+        print("Tipeo invalido")
+            
+        
     
 
 '''
