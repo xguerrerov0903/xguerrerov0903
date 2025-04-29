@@ -52,6 +52,19 @@ def mayor_nota (cadena_nota, mayor_nota):
 def presente_nota (cadena_nota, actu_nota):
     return 
     
+def num_valido ():
+    while True:
+        try:
+            nota = float(input("Ingresa una nota (0 a 100): "))
+            if nota>=0 and nota<=100:
+                return nota
+                break
+            else:
+                print("Valor invalido")
+        except ValueError:
+            print("Valor invalido")
     
 
+'''
 
+'''
