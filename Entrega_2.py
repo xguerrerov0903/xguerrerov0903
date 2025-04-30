@@ -192,8 +192,10 @@ while True:
                     print("*"*20)
                     print("No existe una lista de notas actualmente, usa la opcion 2")
                     print("*"*20)
+            # Por ultimo con la opcion 6 se realiza la salida del programa
             case 6:
                 print("*"*20)
+                # Se llama la funcion sys.exit de la libreria sys para terminar la ejecucion y imprimir el mensaje de despedida
                 sys.exit("Hasta la proxima")
             # En caso de un tipeo numerico entero que no se encuentre en las opciones salta error
             case _:
