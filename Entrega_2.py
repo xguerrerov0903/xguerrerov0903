@@ -205,5 +205,3 @@ while True:
         print("*"*20)
         print("[TIPEO INVALIDO]")
         print("*"*20)
-            
-            
