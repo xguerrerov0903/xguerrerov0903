@@ -42,10 +42,10 @@ def precio_valido():
             
 def comprobacion_existencia (nombre_producto):
     if (lista_productos):
-        for producto in lista_productos:
-            nombre_producto_actual = producto.get("Nombre",False)
+        for poscicion in len(lista_productos):
+            nombre_producto_actual = lista_productos[poscicion].get("Nombre",False)
             if (nombre_producto_actual.upper()==nombre_producto.upper()):
-                return producto
+                return poscicion
         return False
     else:   
         return False
@@ -107,16 +107,33 @@ while True:
                         nombre_producto = input("Ingresa el nombre de tu producto: \n")
                         if not nombre_producto:
                             print("El nombre no puede estar vacío\n")
-                            continue
-                        break
-                    diccionario_producto = comprobacion_existencia(nombre_producto)
-                    if not diccionario_producto:
-                        print("Producto no existente")
-                    else:
-                        print(f"Precio: {diccionario_producto["Precio"]} | Cantidad: {diccionario_producto["Cantidad"]}")
+                            continue                       
+                        poscicion_producto = comprobacion_existencia(nombre_producto)
+                        if not poscicion_producto:
+                            print("Producto no existente")
+                            break
+                        else:
+                            print(f"Nombre: {lista_productos[poscicion_producto]["Nombre"]}")
+                            print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}")
+                            break
             case 3:
-                # Debes cambiar la funcion comprobacion_existencia, esto dado que no la podras reutilizar en este caso, por lo tanto necesitaras
-                # que te regrese la posicion y no el diccionario
+                while True:
+                        nombre_producto = input("Ingresa el nombre de tu producto: \n")
+                        if not nombre_producto:
+                            print("El nombre no puede estar vacío\n")
+                            continue      
+                        poscicion_producto = comprobacion_existencia(nombre_producto)
+                        if not poscicion_producto:
+                            print("Producto no existente")
+                            break
+                        else:
+                            nuevo_precio = precio_valido()
+                            lista_productos[poscicion_producto]["Precio"] = nuevo_precio
+                            print("La nueva informacion de tu producto es:")
+                            print(f"Nombre: {lista_productos[poscicion_producto]["Nombre"]}")
+                            print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}")
+                            
+                        
                 if (lista_productos):
                     print("Ingresa la nota mayor")
             case 4:
