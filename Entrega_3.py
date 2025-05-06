@@ -28,7 +28,7 @@ def precio_valido():
             
 def comprobacion_existencia (nombre_producto):
     if (lista_productos):
-        for poscicion in len(lista_productos):
+        for poscicion in range(len(lista_productos)):
             nombre_producto_actual = lista_productos[poscicion].get("Nombre",False)
             if (nombre_producto_actual.upper()==nombre_producto.upper()):
                 return poscicion
@@ -50,7 +50,7 @@ def agregar_producto ():
         if not nombre_producto:
             print("El nombre no puede estar vacío\n")
             continue
-        if (existente):
+        if existente is False:
             print("Producto ya existente \n")
             continue
         else:
@@ -114,15 +114,15 @@ while True:
                                 print("El nombre no puede estar vacío\n")
                                 continue      
                             poscicion_producto = comprobacion_existencia(nombre_producto)
-                            if not poscicion_producto:
+                            if poscicion_producto is False:
                                 print("Producto no existente")
                                 break
                             else:
                                 nuevo_precio = precio_valido()
                                 lista_productos[poscicion_producto]["Precio"] = nuevo_precio
                                 print("La nueva informacion de tu producto es:")
-                                print(f"Nombre: {lista_productos[poscicion_producto]["Nombre"]}")
-                                print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}")
+                                print(f'Nombre: {lista_productos[poscicion_producto]["Nombre"]}')
+                                print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}')
                 else:
                     print("*"*20)
                     print("No existen productos en el inventario")
@@ -135,7 +135,12 @@ while True:
                             print("El nombre no puede estar vacío\n")
                             continue                       
                         poscicion_producto = comprobacion_existencia(nombre_producto)
-                        lista_productos.pop[poscicion_producto]
+                        if poscicion_producto is False:
+                            print("Producto no existente")
+                            break
+                        else:
+                            lista_productos.pop(poscicion_producto)
+                            print(f"Eliminacion exitosa de {nombre_producto}")
             case 5:
                 if (lista_productos):
                     print(lista_productos)
