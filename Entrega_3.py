@@ -1,17 +1,3 @@
-'''
-Implementación de la Solución:
-Entrada de datos:
-Solicita al usuario los datos necesarios para cada operación (nombre del producto, precio, cantidad), y valida que los datos entren limpios
-Si estás solicitando un número y el usuario ingresa una letra, en lugar de arrojar una excepción debes mostrar una notificación adecuada
-Funciones: Crea funciones que implementen cada funcionalidad del programa:
-Añadir producto (con parámetros para nombre, precio y cantidad) XXXX
-Buscar producto por nombre (con retorno de precio y cantidad)
-Actualizar precio (función que recibe el nombre del producto y el nuevo precio)
-Eliminar producto (recibe el nombre del producto)
-Calcular el valor total del inventario con una función lambda
-Colecciones:
-Usa una lista con diccionarios en su interior para almacenar los productos
-'''
 import sys
 lista_productos = []
 
@@ -104,7 +90,7 @@ while True:
             case 2:
                 if lista_productos:
                     while True:
-                        nombre_producto = input("Ingresa el nombre de tu producto: \n")
+                        nombre_producto = input("Ingresa el nombre del producto: \n")
                         if not nombre_producto:
                             print("El nombre no puede estar vacío\n")
                             continue                       
@@ -116,35 +102,50 @@ while True:
                             print(f"Nombre: {lista_productos[poscicion_producto]["Nombre"]}")
                             print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}")
                             break
+                else: 
+                    print("*"*20)
+                    print("No existen productos en el inventario")
+                    print("*"*20)
             case 3:
-                while True:
-                        nombre_producto = input("Ingresa el nombre de tu producto: \n")
-                        if not nombre_producto:
-                            print("El nombre no puede estar vacío\n")
-                            continue      
-                        poscicion_producto = comprobacion_existencia(nombre_producto)
-                        if not poscicion_producto:
-                            print("Producto no existente")
-                            break
-                        else:
-                            nuevo_precio = precio_valido()
-                            lista_productos[poscicion_producto]["Precio"] = nuevo_precio
-                            print("La nueva informacion de tu producto es:")
-                            print(f"Nombre: {lista_productos[poscicion_producto]["Nombre"]}")
-                            print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}")
-                            
-                        
-                if (lista_productos):
-                    print("Ingresa la nota mayor")
+                if lista_productos:
+                    while True:
+                            nombre_producto = input("Ingresa el nombre del producto: \n")
+                            if not nombre_producto:
+                                print("El nombre no puede estar vacío\n")
+                                continue      
+                            poscicion_producto = comprobacion_existencia(nombre_producto)
+                            if not poscicion_producto:
+                                print("Producto no existente")
+                                break
+                            else:
+                                nuevo_precio = precio_valido()
+                                lista_productos[poscicion_producto]["Precio"] = nuevo_precio
+                                print("La nueva informacion de tu producto es:")
+                                print(f"Nombre: {lista_productos[poscicion_producto]["Nombre"]}")
+                                print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}")
+                else:
+                    print("*"*20)
+                    print("No existen productos en el inventario")
+                    print("*"*20)
             case 4:
                 if (lista_productos):
-                    print("Ingresa la nota a buscar sus repeticiones")
+                    while True:
+                        nombre_producto = input("Ingresa el nombre del producto: \n")
+                        if not nombre_producto:
+                            print("El nombre no puede estar vacío\n")
+                            continue                       
+                        poscicion_producto = comprobacion_existencia(nombre_producto)
+                        lista_productos.pop[poscicion_producto]
             case 5:
                 if (lista_productos):
                     print(lista_productos)
+                    total_inventario = list(map(lambda x: x["Precio"] * x["Cantidad"], lista_productos))
+                    sum_inventario = sum(total_inventario)
+                    print(f"El total es {sum_inventario}$")
+
                 else:
                     print("*"*20)
-                    print("No existe una lista de notas actualmente, usa la opcion 2")
+                    print("No existen productos en el inventario")
                     print("*"*20)
             case 6:
                 print("*"*20)
