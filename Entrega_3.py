@@ -3,15 +3,16 @@ lista_productos = []
 
 def cantidad_valido():
     cantidad = 0
-    try:
-        while cantidad <= 0 or cantidad % 1 != 0:
-            cantidad = float(input("Ingresa la cantidad de tu producto: \n"))
-            if (cantidad <= 0 or cantidad % 1 != 0):
-                print("Cantidad invalido, ingreso un valor positivo y entero")
-    except ValueError:
-        print("Ingresa caracteres numericos unicamente")
-    cantidad = int(cantidad)
-    return cantidad
+    while True:
+        try:
+            while cantidad <= 0 or cantidad % 1 != 0:
+                cantidad = float(input("Ingresa la cantidad de tu producto: \n"))
+                if (cantidad <= 0 or cantidad % 1 != 0):
+                    print("Cantidad invalido, ingreso un valor positivo y entero")
+        except ValueError:
+            print("Ingresa caracteres numericos unicamente")
+        cantidad = int(cantidad)
+        return cantidad
             
 def precio_valido():
     precio = 0.0
