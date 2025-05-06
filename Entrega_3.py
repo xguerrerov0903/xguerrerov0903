@@ -122,7 +122,7 @@ while True:
                                 lista_productos[poscicion_producto]["Precio"] = nuevo_precio
                                 print("La nueva informacion de tu producto es:")
                                 print(f'Nombre: {lista_productos[poscicion_producto]["Nombre"]}')
-                                print(f"Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}')
+                                print(f'Precio: {lista_productos[poscicion_producto]["Precio"]}$ | Cantidad: {lista_productos[poscicion_producto]["Cantidad"]}')
                 else:
                     print("*"*20)
                     print("No existen productos en el inventario")
