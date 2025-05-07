@@ -3,10 +3,17 @@ import sys
 list_books = []
 genders_books = ["Fiction", "NonFiction", "Science", "Biography", "Children"]
 
+def print_elements (book_position ):
+    
+    print(f'Title: {list_books[book_position]["Title"]} | Author: {list_books[book_position]["Author"]}')
+    print(f'Quantity: {list_books[book_position]["Quantity"]} | Gender: {list_books[book_position]["Gender"]}')
+    print("_" * 15)
+    
+
 def valid_quantity():
     while True:
         try:
-            amount = int(input("Enter the quantity of the book: \n"))
+            amount = int(input("Enter the quantity of copies of the book: \n"))
             if amount <= 0:
                 print("Invalid quantity, please enter a positive integer.")
             else:
@@ -23,10 +30,11 @@ def valid_text_input (text_input):
             continue
         return text_input
     
-def add_gender ():
+def valid_gender (text_input):
     while True:
-        try:           
-            gender = int(input(f'''Enter the gender of the book: 
+        try:
+            print(text_input)           
+            gender = int(input(f'''
                                 1. {genders_books[0]}
                                 2. {genders_books[1]}
                                 3. {genders_books[2]}
@@ -76,7 +84,7 @@ def add_book():
         
         book["Copies"] = quantity
         
-        book_gender = add_gender()
+        book_gender = valid_gender("Enter the number form gender of the book: ")
         book["Gender"] = book_gender
         
         list_books.append(book)
@@ -113,52 +121,89 @@ while True:
                             print("Book not found")
                             break
                         else:
-                            print(f'Title: {list_books[book_position]["Title"]} | Author: {list_books[book_position]["Author"]}')
-                            print(f'Quantity: {list_books[book_position]["Quantity"]} | Gender: {list_books[book_position]["Gender"]}')
-                            print("_" * 15)
+                            print_elements(book_position)                             
                             break
                 else:
                     print("*" * 20)
-                    print("No products in the inventory")
+                    print("No books in the inventory")
                     print("*" * 20)
             case 3:
                 if list_books:
-                    while True:
-                        book_title = input("Enter the title of the product: \n")
-                        if not book_title:
-                            print("The title cannot be empty")
-                            continue
-                        book_position = check_existence(book_title)
-                        if book_position is False:
-                            print("Product not found")
-                            break
-                        else:
-                            new_price = valid_price()
-                            list_books[book_position]["Price"] = new_price
-                            print("The new information of your product is:")
-                            print(f'Title: {list_books[book_position]["Title"]}')
-                            print(f'Price: {list_books[book_position]["Price"]}$ | Quantity: {list_books[book_position]["Quantity"]}')
-                            break
+                        while True:
+                            book_title = valid_text_input("Enter the title of the book to borrow: \n")
+                            book_position = check_existence(book_title)
+                            if book_position is False:
+                                print("Book not found")
+                                break
+                            else:
+                                print_elements(book_position)      
+                                if list_books[book_position]["Quantity"] >= 1:
+                                    list_books[book_position]["Quantity"] -= 1  
+                                    print(f"A copie of {list_books[book_position]["Title"]} was borrow now there is {list_books[book_position]["Quantity"]} left") 
+                                else:
+                                    print(f"There is no copies available to borrow of {list_books[book_position]["Title"]}")                        
+                                break
                 else:
                     print("*" * 20)
-                    print("No products in the inventory")
+                    print("No books in the inventory")
                     print("*" * 20)
             case 4:
                 if list_books:
-                    while True:
-                        book_title = input("Enter the title of the product: \n")
-                        if not book_title:
-                            print("The title cannot be empty\n")
-                            continue
-                        book_position = check_existence(book_title)
-                        if book_position is False:
-                            print("Product not found")
-                            break
-                        else:
-                            list_books.pop(book_position)
-                            print(f"Successfully deleted {book_title}")
-                            break
+                        while True:
+                            book_title = valid_text_input("Enter the title of the book to return: \n")
+                            book_position = check_existence(book_title)
+                            if book_position is False:
+                                print("Book not found")
+                                break
+                            else:
+                                print_elements(book_position)      
+                                if list_books[book_position]["Quantity"] != list_books[book_position]["Copies"]:
+                                    list_books[book_position]["Quantity"] += 1  
+                                    print(f"A copie of {list_books[book_position]["Title"]} was return now there is {list_books[book_position]["Quantity"]} left") 
+                                else:
+                                    print(f"The {list_books[book_position]["Title"]} was not borrow in the past, there is not copies to be return")                        
+                                break
+                else:
+                    print("*" * 20)
+                    print("No books in the inventory")
+                    print("*" * 20)
             case 5:
+                if list_books:
+                        while True:
+                            book_title = valid_text_input("Enter the title of the book to delet: \n")
+                            book_position = check_existence(book_title)
+                            if book_position is False:
+                                print("Book not found")
+                                break
+                            else:
+                                print_elements(book_position)      
+                                if list_books[book_position]["Quantity"] == list_books[book_position]["Copies"]:
+                                    list_books.pop(book_position)
+                                    print(f"The book {book_title} was delet form the inventory") 
+                                else:
+                                    print(f"There is copies borrowed of {list_books[book_position]["Title"]}, the can not be delet")                        
+                                break
+                else:
+                    print("*" * 20)
+                    print("No books in the inventory")
+                    print("*" * 20)
+            case 6:
+                if list_books:
+                        while True:
+                            book_title = valid_gender("Enter the numbe of the gender you want see the list of books: \n")
+                            print_elements(book_position)      
+                            if list_books[book_position]["Quantity"] == list_books[book_position]["Copies"]:
+                                list_books.pop(book_position)
+                                print(f"The book {book_title} was delet form the inventory") 
+                            else:
+                                print(f"There is copies borrowed of {list_books[book_position]["Title"]}, the can not be delet")                        
+                                break
+                else:
+                    print("*" * 20)
+                    print("No books in the inventory")
+                    print("*" * 20)
+                
+            case 7:
                 if list_books:
                     total_inventory = list(map(lambda x: x["Price"] * x["Quantity"], list_books))
                     sum_inventory = sum(total_inventory)
@@ -167,7 +212,7 @@ while True:
                     print("*" * 20)
                     print("No products in the inventory")
                     print("*" * 20)
-            case 6:
+            case 8:
                 print("*" * 20)
                 sys.exit("See you next time")
             case _:
