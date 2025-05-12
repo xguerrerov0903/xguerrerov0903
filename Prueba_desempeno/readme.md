@@ -158,40 +158,49 @@ Your total is 143000.0$
 
 ---
 
-### Example 7: Viewing the Inventory Summary
+### Example 6: Show products
 
 **Input**:
 
 ```
-7. See inventory summary
+Type your option: 6
 ```
 
 **Output**:
 
 ```
-Title | Total Copies | Available to Borrow
-_______________________________
-The Great Gatsby | 10 | 10
-_______________________________
-Total books in the inventory: 10
-Total books currently available to borrow: 10
-_______________________________
+______________________________
+Name: Potato
+Price: 2000.0$ | Quantity: 12
+______________________________
+Name: Apple
+Price: 1000.0$ | Quantity: 6
+______________________________
+Name: Rice
+Price: 1500.0$ | Quantity: 20
+______________________________
+Name: Meat
+Price: 10000.0$ | Quantity: 5
+______________________________
+Name: Sugar
+Price: 2200.0$ | Quantity: 15
 ```
 
 ---
 
-### Example 8: Exiting the Program
+### Example 7: Exiting the Program
 
 **Input**:
 
 ```
-8. Exit
+Type your option: 7
 ```
 
 **Output**:
 
 ```
-See you next time
+********************
+See you next time :)
 ```
 
 ---
@@ -200,12 +209,6 @@ See you next time
 
 * **Python** (any version above 3.6 should work)
 * **Operating System**: Cross-platform (Windows, macOS, Linux)
-
----
-
-## License
-
-This project is open-source and licensed under the MIT License. Feel free to modify and contribute!
 
 ---
 
