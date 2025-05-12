@@ -76,6 +76,7 @@ def add_product():
         product["Quantity"] = quantity
         
         list_products.append(product) # Add the product to the list
+        print(f"The product {name_product} has been added to the inventory.")
         break  # Leaves the loop once the product has been added
 
 # Main loop where the user selects menu options
@@ -169,7 +170,12 @@ while True:
                 sys.exit("See you next time :)")  # Leaves the program
             case _:
                 print("Invalid number")  # If the user enters an invalid option
-    except ValueError:
+    except ValueError: 
         print("*" * 20)
         print("[Invalid Type]")  # If the user enters something that is not a number in an option
+        print("*" * 20)
+    except KeyboardInterrupt: 
+        print(" ")
+        print("*" * 20)
+        print("[Invalid Type]")  # If the user type Ctrl+C
         print("*" * 20)

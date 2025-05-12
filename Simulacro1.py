@@ -97,6 +97,7 @@ def add_book():
 
         # Add the book to the inventory
         list_books.append(book)
+
         break
 
 # Main loop to display options and perform actions
