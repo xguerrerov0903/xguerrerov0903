@@ -97,94 +97,63 @@ eggs
 ```
 Name: Eggs
 Price: 300.0$ | Quantity: 30
-_______________
 ```
 
 ---
 
-### Example 3: Borrowing a Book
+### Example 3: Update price
 
 **Input**:
 
 ```
-3. Borrow book
-Enter the title of the book to borrow:
-The Great Gatsby
+Type your option: 3
+Enter the name of the product: 
+EGGS
+Enter your product price: 
+250
 ```
 
 **Output**:
 
 ```
-Title: The Great Gatsby | Author: F. Scott Fitzgerald
-Quantity: 10 | Genre: Fiction
-_______________
-A copy of The Great Gatsby was borrowed. 9 copies remaining.
+The new information of your product is:
+Name: Eggs
+Price: 250.0$ | Quantity: 30
 ```
 
 ---
 
-### Example 4: Returning a Book
+### Example 4: Remove a Product
 
 **Input**:
 
 ```
-4. Return book
-Enter the title of the book to return:
-The Great Gatsby
+Type your option: 4
+Enter the name of the product: 
+EgGs
 ```
 
 **Output**:
 
 ```
-Title: The Great Gatsby | Author: F. Scott Fitzgerald
-Quantity: 9 | Genre: Fiction
-_______________
-A copy of The Great Gatsby was returned. 10 copies available now.
+Successful elimination of EgGs
 ```
 
 ---
 
-### Example 5: Deleting a Book
+### Example 5: Calculate the total value of inventory
 
 **Input**:
 
 ```
-5. Delete book
-Enter the title of the book to delete:
-The Great Gatsby
+Type your option: 5
 ```
 
 **Output**:
+* Note: The code has defaults datas, the default total without changes is this
 
 ```
-Title: The Great Gatsby | Author: F. Scott Fitzgerald
-Quantity: 10 | Genre: Fiction
-_______________
-The book "The Great Gatsby" was deleted from the inventory.
-```
-
----
-
-### Example 6: Listing Books by Genre
-
-**Input**:
-
-```
-6. List books by genre
-Enter the number of the genre you want to view:
-1. Fiction
-2. NonFiction
-3. Science
-4. Biography
-5. Children
-```
-
-**Output**:
-
-```
-Title: The Great Gatsby | Author: F. Scott Fitzgerald
-Quantity: 10 | Genre: Fiction
-_______________
+Your total is 143000.0$
 ```
 
 ---
