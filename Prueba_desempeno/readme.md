@@ -150,7 +150,7 @@ Type your option: 5
 ```
 
 **Output**:
-* Note: The code has defaults datas, the default total without changes is this
+* Note: The code has defaults data, the default total without changes is this
 
 ```
 Your total is 143000.0$
