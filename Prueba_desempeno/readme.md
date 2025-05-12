@@ -13,8 +13,9 @@ This Python-based application allows you to manage a product inventory system. Y
      ```
    * Run the script in a terminal or command prompt:
      ```bash
-     python book_inventory.py
+     python Desempeno.py
      ```
+     Check that you run the script in the folder where you clone the repo
 
 2. **Menu Options**:
    When the program runs, you'll be presented with the following menu options:
