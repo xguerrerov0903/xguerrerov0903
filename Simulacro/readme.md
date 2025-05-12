@@ -1,6 +1,4 @@
-Sure! Below is the content for the `README.md` file in English. This includes usage instructions and input/output examples based on the provided Python code.
 
----
 
 # Book Inventory System
 
