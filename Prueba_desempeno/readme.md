@@ -45,3 +45,204 @@ This Python-based application allows you to manage a product inventory system. Y
 4. **Exit**:
 
    * Selecting option `7` will exit the program.
+     
+5. **Default data**:
+   The code has 5 default data that are in line 4, if you want you can delete them, they are not necessary, the code will work without them even with an empty list
+   ```bash
+     list_products = [{"Name": "Potato","Price": 2000.0,"Quantity": 12},
+                 {"Name": "Apple","Price": 1000.0,"Quantity": 6},
+                 {"Name": "Rice","Price": 1500.0,"Quantity": 20},
+                 {"Name": "Meat","Price": 10000.0,"Quantity": 5},
+                 {"Name": "Sugar","Price": 2200.0,"Quantity": 15}]
+   ```
+  
+---
+
+## Input/Output Examples
+
+### Example 1: Adding a Book
+
+**Input**:
+
+```
+1. Add book
+Enter the title of your book:
+The Great Gatsby
+Enter the author's name:
+F. Scott Fitzgerald
+Enter the number of copies of the book:
+10
+Enter the number corresponding to the book's genre:
+1. Fiction
+2. NonFiction
+3. Science
+4. Biography
+5. Children
+```
+
+**Output**:
+
+```
+The book "The Great Gatsby" has been added to the inventory.
+```
+
+---
+
+### Example 2: Searching for a Book
+
+**Input**:
+
+```
+2. Search book
+Enter the title of the book:
+The Great Gatsby
+```
+
+**Output**:
+
+```
+Title: The Great Gatsby | Author: F. Scott Fitzgerald
+Quantity: 10 | Genre: Fiction
+_______________
+```
+
+---
+
+### Example 3: Borrowing a Book
+
+**Input**:
+
+```
+3. Borrow book
+Enter the title of the book to borrow:
+The Great Gatsby
+```
+
+**Output**:
+
+```
+Title: The Great Gatsby | Author: F. Scott Fitzgerald
+Quantity: 10 | Genre: Fiction
+_______________
+A copy of The Great Gatsby was borrowed. 9 copies remaining.
+```
+
+---
+
+### Example 4: Returning a Book
+
+**Input**:
+
+```
+4. Return book
+Enter the title of the book to return:
+The Great Gatsby
+```
+
+**Output**:
+
+```
+Title: The Great Gatsby | Author: F. Scott Fitzgerald
+Quantity: 9 | Genre: Fiction
+_______________
+A copy of The Great Gatsby was returned. 10 copies available now.
+```
+
+---
+
+### Example 5: Deleting a Book
+
+**Input**:
+
+```
+5. Delete book
+Enter the title of the book to delete:
+The Great Gatsby
+```
+
+**Output**:
+
+```
+Title: The Great Gatsby | Author: F. Scott Fitzgerald
+Quantity: 10 | Genre: Fiction
+_______________
+The book "The Great Gatsby" was deleted from the inventory.
+```
+
+---
+
+### Example 6: Listing Books by Genre
+
+**Input**:
+
+```
+6. List books by genre
+Enter the number of the genre you want to view:
+1. Fiction
+2. NonFiction
+3. Science
+4. Biography
+5. Children
+```
+
+**Output**:
+
+```
+Title: The Great Gatsby | Author: F. Scott Fitzgerald
+Quantity: 10 | Genre: Fiction
+_______________
+```
+
+---
+
+### Example 7: Viewing the Inventory Summary
+
+**Input**:
+
+```
+7. See inventory summary
+```
+
+**Output**:
+
+```
+Title | Total Copies | Available to Borrow
+_______________________________
+The Great Gatsby | 10 | 10
+_______________________________
+Total books in the inventory: 10
+Total books currently available to borrow: 10
+_______________________________
+```
+
+---
+
+### Example 8: Exiting the Program
+
+**Input**:
+
+```
+8. Exit
+```
+
+**Output**:
+
+```
+See you next time
+```
+
+---
+
+## Requirements
+
+* **Python** (any version above 3.6 should work)
+* **Operating System**: Cross-platform (Windows, macOS, Linux)
+
+---
+
+## License
+
+This project is open-source and licensed under the MIT License. Feel free to modify and contribute!
+
+---
+
