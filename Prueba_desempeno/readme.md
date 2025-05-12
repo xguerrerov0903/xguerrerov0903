@@ -35,13 +35,12 @@ This Python-based application allows you to manage a product inventory system. Y
 
 3. **Actions**:
 
-   * **Add a Product**: Allows you to add a new book to the inventory by entering the book's title, author, quantity, and genre.
-   * **Search a Product**: Allows you to search for a book by title and view its details, including available copies.
-   * **Update price**: Allows you to borrow a book, decreasing the available copies in the inventory.
-   * **Return a Book**: Allows you to return a book, increasing the available copies in the inventory.
-   * **Remove a Product**: Allows you to delete a book from the inventory if no copies are borrowed.
-   * **List Books by Genre**: Allows you to filter books based on their genre (e.g., Fiction, NonFiction, etc.).
-   * **See Inventory Summary**: Displays a summary of all books, their total copies, and how many are available to borrow.
+   * **Add a Product**: Allows you to add a new product to the inventory by entering the product's name, preci and quantity.
+   * **Search a Product**: Allows you to search for a product by name and view its details.
+   * **Update price**: Allows you to change the price of a product by its name.
+   * **Remove a Product**: Allows you to delete a product from the inventory by its name.
+   * **Calculate the total value of inventory**: Displays a sum of all the products.
+   * **Show products**: Displays a summary of all products and its details.
 
 4. **Exit**:
 
