@@ -7,6 +7,7 @@ This Python-based application allows you to manage a product inventory system. Y
 1. **Running the Program**:
 
    * Ensure you have Python installed on your machine.
+     
    * Clone the repo
      ```bash
      git clone https://github.com/xguerrerov0903/xguerrerov0903/tree/main/Prueba_desempeno
