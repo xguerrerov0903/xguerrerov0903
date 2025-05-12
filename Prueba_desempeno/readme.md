@@ -60,49 +60,43 @@ This Python-based application allows you to manage a product inventory system. Y
 
 ## Input/Output Examples
 
-### Example 1: Adding a Book
+### Example 1: Adding a Product
 
 **Input**:
 
 ```
-1. Add book
-Enter the title of your book:
-The Great Gatsby
-Enter the author's name:
-F. Scott Fitzgerald
-Enter the number of copies of the book:
-10
-Enter the number corresponding to the book's genre:
-1. Fiction
-2. NonFiction
-3. Science
-4. Biography
-5. Children
+Type your option: 1
+Enter the name of your product: 
+Eggs
+Enter your product price: 
+300
+Enter the amount of your product: 
+30
 ```
 
 **Output**:
 
 ```
-The book "The Great Gatsby" has been added to the inventory.
+The product Eggs has been added to the inventory.
 ```
 
 ---
 
-### Example 2: Searching for a Book
+### Example 2: Search a Product
 
 **Input**:
 
 ```
-2. Search book
-Enter the title of the book:
-The Great Gatsby
+Type your option: 2
+Enter the name of the product: 
+eggs
 ```
 
 **Output**:
 
 ```
-Title: The Great Gatsby | Author: F. Scott Fitzgerald
-Quantity: 10 | Genre: Fiction
+Name: Eggs
+Price: 300.0$ | Quantity: 30
 _______________
 ```
 
