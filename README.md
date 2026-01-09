@@ -35,11 +35,11 @@ I am a **Systems Engineer** from **EAFIT University** passionate about backend d
 ### 📊 GitHub Stats
 
 <p align="center">
-  <img width="49%" 
-       src="https://github-readme-stats.vercel.app/api?username=TU_USUARIO_AQUÍ&show_icons=true&theme=visual_studio_dark&hide_border=true&include_all_commits=true&count_private=true" 
+  <img height="160"
+       src="https://github-readme-stats.vercel.app/api?username=TU_USUARIO&show_icons=true&theme=visual_studio_dark&hide_border=true&cache_seconds=1800"
        alt="GitHub Stats" />
-  <img width="49%" 
-       src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU_USUARIO_AQUÍ&layout=compact&theme=visual_studio_dark&hide_border=true&langs_count=8" 
+  <img height="160"
+       src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU_USUARIO&layout=compact&theme=visual_studio_dark&hide_border=true&langs_count=8&cache_seconds=1800"
        alt="Top Languages" />
 </p>
 
