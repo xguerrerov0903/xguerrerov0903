@@ -36,12 +36,13 @@ I am a **Systems Engineer** from **EAFIT University** passionate about backend d
 
 <p align="center">
   <img height="160"
-       src="https://github-readme-stats.vercel.app/api?username=TU_USUARIO&show_icons=true&theme=visual_studio_dark&hide_border=true&cache_seconds=1800"
+       src="https://github-readme-stats.vercel.app/api?username=xguerrerov0903&show_icons=true&theme=visual_studio_dark&hide_border=true"
        alt="GitHub Stats" />
   <img height="160"
-       src="https://github-readme-stats.vercel.app/api/top-langs/?username=TU_USUARIO&layout=compact&theme=visual_studio_dark&hide_border=true&langs_count=8&cache_seconds=1800"
+       src="https://github-readme-stats.vercel.app/api/top-langs/?username=xguerrerov0903&layout=compact&theme=visual_studio_dark&hide_border=true"
        alt="Top Languages" />
 </p>
+
 
 ---
 
